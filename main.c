@@ -13,8 +13,8 @@ void welcome(void);//Renders the welcome screen
 void instructions(void);//Renders the instructions
 void waitStandardTime(void);//Pauses the thread for 100ms
 void printString(char*);//Prints the string recieved
-int enterToContinue(void);//Waits for the user to press ENTER, returns 1 on press
-
+void enterToContinue(void);//Waits for the user to press ENTER
+void input(int);//takes the input and responds
 
 int main(int argc,char* argv[])
 {
