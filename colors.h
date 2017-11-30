@@ -1,6 +1,6 @@
 #define BLUE 1
 #define GREEN 2
-#define LIGHT_BLUE 3
+#define LIGHT_B 3
 #define RED 4
 #define PURPLE 5
 #define YELLOW 6
