@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
+#include "console.h"
 
 #define BLUE 1
 #define GREEN 2
@@ -26,33 +27,12 @@ void welcome(void);//Renders the welcome screen
 void instructions(void);//Renders the instructions
 void waitStandardTime(void);//Pauses the thread for 100ms
 void printString(char*);//Prints the string recieved
-int main()
+void enterToContinue(void);//Waits for the user to press ENTER
+int main(int argc,char* argv[])
 {
   welcome();
 
   return 0;
-}
-
-void defaultConsoleColor(void) {
-  setConsoleColor(WHITE);
-}
-
-void setConsoleColor(int color) {
-  HANDLE  hConsole;
-  hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-  SetConsoleTextAttribute(hConsole, color);
-}
-
-void waitStandardTime(void){
-  usleep(100*1000);
-}
-
-void printString(char *str) {
-  int i;
-  for (i = 0; i < strlen(str); i++) {
-    printf("%c",str[i]);
-    waitStandardTime();
-  }
 }
 
 void welcome(void) {
@@ -63,6 +43,7 @@ void welcome(void) {
   setConsoleColor(GOLDISH);
   printString("Game by ");
   setConsoleColor(YELLOW);
-  printString("thvardhan");
+  printString("thvardhan\n");
   defaultConsoleColor();
+  enterToContinue();
 }
