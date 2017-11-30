@@ -13,12 +13,13 @@ void welcome(void);//Renders the welcome screen
 void instructions(void);//Renders the instructions
 void waitStandardTime(void);//Pauses the thread for 100ms
 void printString(char*);//Prints the string recieved
-void enterToContinue(void);//Waits for the user to press ENTER
+int enterToContinue(void);//Waits for the user to press ENTER, returns 1 on press
 
 
 int main(int argc,char* argv[])
 {
   welcome();
+  instructions();
 
   return 0;
 }
@@ -32,6 +33,17 @@ void welcome(void) {
   printString("Game by ");
   setConsoleColor(YELLOW);
   printString("thvardhan\n");
+  defaultConsoleColor();
+  enterToContinue();
+}
+
+void instructions(void){
+  setConsoleColor(LIGHT_PINK);
+  printString("The game is very simple, you have to guess the number\n");
+  setConsoleColor(CYAN);
+  printString("Enter any number, then computer will hint you wether it's big or small.\n");
+  setConsoleColor(LIGHT_GREEN);
+  printString("According to the hint, you have to guess the number\n");
   defaultConsoleColor();
   enterToContinue();
 }

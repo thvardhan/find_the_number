@@ -25,8 +25,11 @@ void printString(char *str) {
     usleep(100*1000);
   }
 }
-void enterToContinue(void){
+int enterToContinue(void){
   printf("Press Enter To Continue...");
   char a;
   scanf("%c",&a);
+  
+
+
 }
